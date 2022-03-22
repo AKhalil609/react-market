@@ -1,5 +1,6 @@
 import React, { FunctionComponent, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import Basket from './components/Basket';
 import FilterCard from './components/FilterCard';
 import Header from './components/Header';
 import { ProductCard } from './components/ProductCard';
@@ -9,7 +10,7 @@ import { fetchItemRequest } from './Store/items/actions';
 import { getPendingSelector, getItemsSelector, getErrorSelector } from './Store/items/selectors';
   
 
-const App: FunctionComponent = () => {
+const App: React.FC = () => {
 
     const dispatch = useDispatch();
     const pending = useSelector(getPendingSelector);
@@ -32,35 +33,16 @@ const App: FunctionComponent = () => {
                 <ContentContainer>
                     <Title>Products</Title>
                     <CardsContainer>
-                        <ProductCard />
-                        <ProductCard />
-                        <ProductCard />
-                        <ProductCard />
-                        <ProductCard />
-                        <ProductCard />
-                        <ProductCard />
-                        <ProductCard />
-                        <ProductCard />
-                        <ProductCard />
-                        <ProductCard />
-                        <ProductCard />
-                        <ProductCard />
-                        <ProductCard />
-                        <ProductCard />
-                        <ProductCard />
-                        <ProductCard />
-                        <ProductCard />
-                        <ProductCard />
-                        <ProductCard />
-                        <ProductCard />
-                        <ProductCard />
-                        <ProductCard />
-                        <ProductCard />
-                        <ProductCard />
-                        <ProductCard />
-                        <ProductCard />
-                        <ProductCard />
+                        {pending ? (<div>Loading...</div>) : error ? (
+                            <div>Error</div>
+                        ):(
+                            items.map((item => <ProductCard item={item} key={item.added} />))
+                        )}
+                        
                     </CardsContainer>
+                </ContentContainer>
+                <ContentContainer>
+                    <Basket />
                 </ContentContainer>
 
             </AppContainer>

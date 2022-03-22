@@ -5,8 +5,8 @@ import { fetchItemFailure, fetchItemSuccess } from './actions';
 import { FETCH_ITEM_REQUEST } from './actionTypes';
 import { IItem } from './types';
 
-const getItems = async (): Promise<IItem[]> => {
-    return await axios.get('https://my-json-server.typicode.com/AKhalil609/demo/items');
+const getItems = (): Promise<IItem[]> => {
+    return axios.get('https://my-json-server.typicode.com/AKhalil609/demo/items');
 };
     
 

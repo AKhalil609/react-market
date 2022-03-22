@@ -24,6 +24,9 @@ export const AddBtn = styled.button`
     height: 22px;
     color: ${ColorPalette.PureWhite};
     margin-top: 8px;
+    :hover{
+        cursor: pointer;
+    }
 `;
 
 export const ProductLable = styled.span`
@@ -51,6 +54,7 @@ export const CardContainer = styled.div`
     display: flex;
     flex-direction: column;
     width: 124px;
+    justify-content: space-between;
 `;
 
 export const Title = styled.div`
