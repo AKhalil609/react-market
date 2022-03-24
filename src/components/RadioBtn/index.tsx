@@ -8,6 +8,7 @@ interface RadioBtnProps {
     name?: string
     id?: string
     label?: string
+    onClick?: React.EffectCallback
 }
 
 const RadioBtn = ({
@@ -17,6 +18,7 @@ const RadioBtn = ({
     id,
     label,
     checked,
+    onClick,
 }: RadioBtnProps) => (
     <Label htmlFor={id}>
         {label}
@@ -28,6 +30,7 @@ const RadioBtn = ({
             value={value}
             onChange={onChange}
             checked={checked}
+            onClick={onClick}
         />
         <Indicator />
     </Label>

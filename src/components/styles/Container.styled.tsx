@@ -3,6 +3,7 @@ import {
     ColorPalette,
     HeadLine4,
     RegularBold,
+    RegularNormal,
     RegularSemiBold,
     SmallSemiBold,
 } from './Mixins';
@@ -24,7 +25,7 @@ export const AddBtn = styled.button`
     height: 22px;
     color: ${ColorPalette.PureWhite};
     margin-top: 8px;
-    :hover{
+    :hover {
         cursor: pointer;
     }
 `;
@@ -131,4 +132,20 @@ export const ContentContainer = styled.div`
 export const AppContainer = styled.div`
     display: flex;
     padding: 40px 104px;
+`;
+
+export const Footer = styled.footer`
+    display: flex;
+    justify-content: center;
+    ${RegularNormal('174%')};
+    color: ${ColorPalette.LightBlue};
+    margin-bottom: 40px;
+`;
+
+export const CheckBoxContainer = styled.div`
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    ${RegularNormal('18px')};
+    color: ${ColorPalette.LableGray};
 `;

@@ -2,9 +2,14 @@ import {
     FETCH_ITEM_REQUEST,
     FETCH_ITEM_SUCCESS,
     FETCH_ITEM_FAILURE,
+    ADD_TO_CART,
+    REMOVE_FROM_CART,
+    SORT_ITEMS,
 } from './actionTypes';
+
   
 export interface IItem {
+    _id: string,
     tags: string[],
     price: number,
     name: string,
@@ -18,11 +23,27 @@ export interface IItem {
 export interface ItemState {
     pending: boolean;
     items: IItem[];
+    cart: AddItemPayload[];
     error: string | null;
+    total: number;
+    tags: any;
   }
   
 export interface FetchItemsSuccessPayload {
     items: IItem[];
+  }
+
+export interface AddItemPayload {
+    id: string;
+    quantity: number;
+    name: string;
+    price: number;
+    total?: number;
+  }
+
+export interface SortPayload {
+    key: string;
+    ascending: boolean;
   }
   
 export interface FetchItemsFailurePayload {
@@ -42,8 +63,26 @@ export type FetchItemsFailure = {
     type: typeof FETCH_ITEM_FAILURE;
     payload: FetchItemsFailurePayload;
   };
+
+export type AddItem = {
+    type: typeof ADD_TO_CART;
+    payload: AddItemPayload;
+  }
+
+export type RemoveItem = {
+    type: typeof REMOVE_FROM_CART;
+    payload: AddItemPayload;
+  }
+
+export type SortItems = {
+    type: typeof SORT_ITEMS;
+    payload: SortPayload;
+  }
   
 export type ItemActions =
     | FetchItemsRequest
     | FetchItemsSuccess
-    | FetchItemsFailure;
+    | FetchItemsFailure
+    | AddItem
+    | SortItems
+    | RemoveItem;
