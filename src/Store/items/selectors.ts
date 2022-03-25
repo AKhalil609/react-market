@@ -22,19 +22,22 @@ export const getTagsSelector = createSelector(getItems, (items) =>
                 allItems[element] = 1;
             }
             allItems[element] += 1; 
+            allItems.All += 1;
         }
         return allItems;
-    }, {})
+    }, {All:1})
 );
 
 export const getBrandsSelector = createSelector(getItems, (items) =>
     items.reduce((allItems: any, item) => {
+
         if (!allItems[item.manufacturer]) {
             allItems[item.manufacturer] = 1;
         }
         allItems[item.manufacturer] += 1; 
+        allItems.All += 1; 
         return allItems;
-    }, {})
+    }, {All:1})
 );
 
 export const getCartItemsSelector = createSelector(

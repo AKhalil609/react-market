@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import {
     getErrorSelector,
@@ -23,18 +23,31 @@ interface Props {
 const FilterCard: React.FC<Props> = ({title, entries}) => {
     const pending = useSelector(getPendingSelector);
     const error = useSelector(getErrorSelector);
+    const [searchTerm, setSearchTerm] = useState('');
+    const [filteredEntries, setFilteredEntries] = useState([]);
+
+    useEffect(() => {
+        setFilteredEntries(
+            entries.filter((entry: any) =>
+                entry[0].toLowerCase().includes(searchTerm.toLowerCase())
+            )
+        );
+    }, [searchTerm, entries]);
+
+    
+
     return (
         <MiniCardContainer>
             <Subtitle>{title}</Subtitle>
             <MiniCard>
-                <SearchInput placeholder={`Search ${title}`}></SearchInput>
+                <SearchInput placeholder={`Search ${title}`} onChange={e=> setSearchTerm(e.target.value)}></SearchInput>
                 <ListContainer>
                     {pending ? (
                         <div>Loading...</div>
                     ) : error ? (
                         <div>Error</div>
                     ) : (
-                        entries.map((entry: any, index: any) => (
+                        filteredEntries.map((entry: any, index: any) => (
                             <CheckBoxContainer key={index}>
                                 <Checkbox label={entry[0]} /> ({entry[1]})
                             </CheckBoxContainer>

@@ -24,7 +24,7 @@ export const Label = styled.label`
   position: relative;
   display: inline-block;
   cursor: pointer;
-  margin: 0.6em 1em;
+  margin: 0.6em 3em;
   ${RegularNormal()};
   color: ${ColorPalette.CoralBlack};
 `;

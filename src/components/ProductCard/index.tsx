@@ -26,7 +26,7 @@ export const ProductCard: React.FC<Props> = ({item}) => {
     return (
         <CardContainer>
             <ImageContainer src="https://via.placeholder.com/150" alt="Girl in a jacket" ></ImageContainer>
-            <Price>{item.price}</Price>
+            <Price>₺ {item.price}</Price>
             <ProductLable>{item.name}</ProductLable>
             <AddBtn onClick={addItemToCart}>Add</AddBtn>
         </CardContainer>

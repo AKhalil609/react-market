@@ -1,5 +1,5 @@
 import React from 'react';
-import { Label, Input, Indicator } from './CheckBox.styled';
+import { Label, Input, Indicator, LabelContainer } from './CheckBox.styled';
 
 interface CheckBoxProps {
     value?: string,
@@ -21,7 +21,7 @@ const Checkbox = ({
 }: CheckBoxProps) => {
     return (
         <Label htmlFor={id}>
-            {label}
+            <LabelContainer>{label}</LabelContainer>
             <Input
                 id={id}
                 type="checkbox"

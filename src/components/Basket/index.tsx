@@ -13,7 +13,7 @@ const Basket: React.FC = () =>{
         <Container>
             {items.map((item: AddItemPayload, index: number) => <BasketItem item={item} key={index}></BasketItem>)}
             
-            <BasketTotal>{total}</BasketTotal>
+            <BasketTotal>₺ {total}</BasketTotal>
         </Container>
     );
 };

@@ -90,11 +90,11 @@ export const BasketBtn = styled.button`
 `;
 
 export const SearchInput = styled.input`
-    width: 248px;
     height: 48px;
     border: 2px solid #e0e0e0;
     box-sizing: border-box;
     border-radius: 2px;
+    padding: 16px 12px;
 `;
 
 export const Subtitle = styled.label`
@@ -123,6 +123,7 @@ export const ListContainer = styled.div`
     display: flex;
     flex-direction: column;
     overflow: auto;
+    margin-top: 17px;
 `;
 
 export const ContentContainer = styled.div`
