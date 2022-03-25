@@ -25,6 +25,7 @@ export interface IItem {
 }
 
 export interface ItemState {
+    _id?: string
     pending: boolean
     items: IItem[]
     cart: AddItemPayload[]

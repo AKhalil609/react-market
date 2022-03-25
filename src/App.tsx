@@ -57,16 +57,16 @@ const App: React.FC = () => {
 
     return (
         <>
-            <Header />
-            <AppContainer>
+            <Header data-testid='HeaderComponent'/>
+            <AppContainer data-testid='AppContainer'>
                 <ContentContainer>
                     <SortingCard />
                     <FilterCard title="Brands" entries={brands} />
                     <FilterCard title="Tags" entries={tags} />
                 </ContentContainer>
                 <ContentContainer>
-                    <Title>Products</Title>
-                    <CardsContainer>
+                    <Title data-testid='title'>Products</Title>
+                    <CardsContainer >
                         {pending ? (
                             <div>Loading...</div>
                         ) : error ? (
@@ -81,7 +81,7 @@ const App: React.FC = () => {
                 {_showBasket ? 
                     <Basket />: <></>}
             </AppContainer>
-            <Footer>©2019 Market . Privacy Policy</Footer>
+            <Footer data-testid='footer'>©2019 Market . Privacy Policy</Footer>
         </>
     );
 };

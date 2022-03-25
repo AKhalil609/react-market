@@ -17,6 +17,8 @@ interface Props {
 const ItemControls: React.FC<Props> = ({ item }) => {
     const dispatch = useDispatch();
     const addItemToCart = () => {
+        console.log(item);
+        
         const payload = {
             id: item.id,
             quantity: 1,
@@ -36,12 +38,12 @@ const ItemControls: React.FC<Props> = ({ item }) => {
         dispatch(removeItem(payload));
     };
     return (
-        <ControlsContainer>
+        <ControlsContainer data-testid='ControlsContainer'>
             <ControlBtn onClick={removeItemFromCart}>
                 <Minus />
             </ControlBtn>
-            <CounterContainer>{item.quantity}</CounterContainer>
-            <ControlBtn onClick={addItemToCart}>
+            <CounterContainer data-testid='count'>{item.quantity}</CounterContainer>
+            <ControlBtn role='AddBtn' onClick={addItemToCart}>
                 <Add />
             </ControlBtn>
         </ControlsContainer>

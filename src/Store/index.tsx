@@ -6,10 +6,10 @@ import rootReducer from './rootReducer';
 import { rootSaga } from './rootSaga';
 
 // Create the saga middleware
-const sagaMiddleware = createSagaMiddleware();
+export const sagaMiddleware = createSagaMiddleware();
 
 // Mount it on the Store
-const store = createStore(rootReducer, applyMiddleware(sagaMiddleware, logger));
+export const store = createStore(rootReducer, applyMiddleware(sagaMiddleware, logger));
 
 // Run the saga
 sagaMiddleware.run(rootSaga);

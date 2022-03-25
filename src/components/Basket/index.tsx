@@ -15,7 +15,7 @@ const Basket: React.FC = () => {
         return <></>;
     }
     return (
-        <Container>
+        <Container data-testid='BasketContainer'>
             {items.map((item: AddItemPayload, index: number) => (
                 <BasketItem item={item} key={index}></BasketItem>
             ))}

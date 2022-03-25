@@ -57,7 +57,7 @@ export default (state = initialState, action: ItemActions) => {
             ...state,
             pending: false,
             items: action.payload.items.map((item) => {
-                return { ...item, _id: uuidv4() };
+                return { ...item, _id: item._id ||uuidv4() };
             }),
             error: null,
         };
@@ -78,6 +78,7 @@ export default (state = initialState, action: ItemActions) => {
         } else {
             let check = false;
             state.cart.map((item: any, key: number) => {
+
                 if (item.id == action.payload.id) {
                     state.cart[key].quantity++;
                     check = true;
