@@ -9,6 +9,7 @@ import {
     REMOVE_BRAND_FILTER,
     REMOVE_TAG_FILTER,
     ADD_TAG_FILTER,
+    SHOW_BASKET,
 } from './actionTypes';
 
 import { ItemActions, ItemState } from './types';
@@ -22,6 +23,7 @@ const initialState: ItemState = {
     error: null,
     brandFilter: [],
     tagFilter: [],
+    showBasket: false,
 };
 
 const dynamicsort = (property: string, order: boolean) => {
@@ -159,6 +161,11 @@ export default (state = initialState, action: ItemActions) => {
             tagFilter: [...state.tagFilter].filter(
                 (tag) => tag !== action.payload.filterElement
             ),
+        };
+    case SHOW_BASKET:
+        return {
+            ...state,
+            showBasket: !state.showBasket
         };
     default:
         return {

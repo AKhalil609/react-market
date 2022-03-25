@@ -22,6 +22,7 @@ import {
     getBrandsSelector,
     getBrandFiltersSelector,
     getBrandTagsSelector,
+    getBasketStatusSelector,
 } from './Store/items/selectors';
 import { IItem } from './Store/items/types';
 
@@ -30,6 +31,7 @@ const App: React.FC = () => {
     const brandsFilter = useSelector(getBrandFiltersSelector);
     const tagsFilter = useSelector(getBrandTagsSelector);
     const pending = useSelector(getPendingSelector);
+    const _showBasket = useSelector(getBasketStatusSelector);
     const items = useSelector(getItemsSelector)
         .filter((item) => {
             if (!brandsFilter.length) {
@@ -64,7 +66,6 @@ const App: React.FC = () => {
                 </ContentContainer>
                 <ContentContainer>
                     <Title>Products</Title>
-                    {console.log(items)}
                     <CardsContainer>
                         {pending ? (
                             <div>Loading...</div>
@@ -77,9 +78,8 @@ const App: React.FC = () => {
                         )}
                     </CardsContainer>
                 </ContentContainer>
-                <ContentContainer>
-                    <Basket />
-                </ContentContainer>
+                {_showBasket ? 
+                    <Basket />: <></>}
             </AppContainer>
             <Footer>©2019 Market . Privacy Policy</Footer>
         </>

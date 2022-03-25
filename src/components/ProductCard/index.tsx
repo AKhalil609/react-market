@@ -29,7 +29,7 @@ export const ProductCard: React.FC<Props> = ({ item }) => {
     return (
         <CardContainer>
             <ImageContainer
-                src="https://via.placeholder.com/150"
+                src={`https://robohash.org/${item._id}.png`}
                 alt="Girl in a jacket"
             ></ImageContainer>
             <Price>₺ {item.price}</Price>

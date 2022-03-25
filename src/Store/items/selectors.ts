@@ -12,6 +12,8 @@ const getBrandFilters = (state: AppState) => state.item.brandFilter;
 
 const getTagFilters = (state: AppState) => state.item.tagFilter;
 
+const getBasketStatus = (state: AppState) => state.item.showBasket;
+
 const getCartTotal = (state: AppState) => state.item.total;
 
 const getError = (state: AppState) => state.item.error;
@@ -68,6 +70,8 @@ export const getCartTotalSelector = createSelector(
     getCartTotal,
     (total) => total
 );
+
+export const getBasketStatusSelector = createSelector(getBasketStatus, (basket) => basket);
 
 export const getPendingSelector = createSelector(
     getPending,

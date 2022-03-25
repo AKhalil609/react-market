@@ -11,6 +11,9 @@ import BasketItem from './BasketItem';
 const Basket: React.FC = () => {
     const items = useSelector(getCartItemsSelector);
     const total = Math.round(useSelector(getCartTotalSelector) * 100) / 100;
+    if (!items.length) {
+        return <></>;
+    }
     return (
         <Container>
             {items.map((item: AddItemPayload, index: number) => (

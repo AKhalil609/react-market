@@ -9,6 +9,7 @@ import {
     ADD_TAG_FILTER,
     REMOVE_BRAND_FILTER,
     REMOVE_TAG_FILTER,
+    SHOW_BASKET,
 } from './actionTypes';
 import {
     FetchItemsRequest,
@@ -27,6 +28,7 @@ import {
     AddFilterTag,
     RemoveFilterBrand,
     RemoveFilterTag,
+    ShowBasket,
 } from './types';
 
 export const fetchItemRequest = (): FetchItemsRequest => ({
@@ -86,4 +88,8 @@ export const removeTagFilter = (
 ): RemoveFilterTag => ({
     type: REMOVE_TAG_FILTER,
     payload,
+});
+
+export const showBasket = (): ShowBasket => ({
+    type: SHOW_BASKET,
 });

@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import {
+    BreakPoints,
     ColorPalette,
     HeadLine4,
     RegularBold,
@@ -72,14 +73,21 @@ export const CardsContainer = styled.div`
     flex-wrap: wrap;
     gap: 24px;
     max-width: 608px;
+    min-width: 273px;
+    justify-content: space-between;
 `;
 
-export const BasketBtn = styled.button`
+interface Props {
+    showBasket?: boolean
+}
+
+export const BasketBtn = styled.button<Props>`
     width: 129px;
     height: 76px;
-    background: #147594;
+    background: ${(props)=> props.showBasket ? '#147594' : ColorPalette.LightBlue};
     color: ${ColorPalette.PureWhite};
     position: absolute;
+    border: 0;
     right: 104px;
     display: flex;
     align-items: center;
@@ -87,6 +95,9 @@ export const BasketBtn = styled.button`
     ${RegularSemiBold('18px')}
     letter-spacing: 0.16px;
     top: 0;
+    :hover {
+        cursor: pointer;
+    }
 `;
 
 export const SearchInput = styled.input`
@@ -106,6 +117,8 @@ export const Subtitle = styled.label`
 export const MiniCardContainer = styled.div`
     display: flex;
     flex-direction: column;
+    margin-bottom: 24px;
+
 `;
 
 export const MiniCard = styled.div`
@@ -113,7 +126,8 @@ export const MiniCard = styled.div`
     flex-direction: column;
     background: ${ColorPalette.PureWhite};
     max-height: 274px;
-    width: 296px;
+    max-width: 296px;
+    min-width: 273px;
     padding: 24px;
     box-shadow: 0px 6px 24px rgba(93, 62, 188, 0.04);
     border-radius: 2px;
@@ -127,12 +141,19 @@ export const ListContainer = styled.div`
 `;
 
 export const ContentContainer = styled.div`
-    margin-right: 16px;
+
+        margin-right: 16px;
 `;
 
 export const AppContainer = styled.div`
     display: flex;
     padding: 40px 104px;
+
+    @media (max-width: ${BreakPoints.small}) {
+        flex-direction: column;
+        align-items: center;
+}   
+
 `;
 
 export const Footer = styled.footer`

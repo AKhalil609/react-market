@@ -7,7 +7,10 @@ export const Container = styled.div`
     background: ${ColorPalette.PureWhite};
     border: 8px solid ${ColorPalette.LightBlue};
     border-radius: 2px;
-    padding: 25px 20px;
+    padding: 10px 20px 26px;
+    position: absolute;
+    right: 104px;
+    box-shadow: 0px 6px 24px rgba(93, 62, 188, 0.15);
 `;
 
 export const ItemContainer = styled.div`
@@ -17,6 +20,7 @@ export const ItemContainer = styled.div`
     height: fit-content;
     padding-bottom: 18px;
     border-bottom: 1px solid ${ColorPalette.LightGray};
+    margin-top: 16px;
 `;
 
 export const ItemLable = styled.div`

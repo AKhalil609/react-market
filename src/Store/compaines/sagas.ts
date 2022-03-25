@@ -16,8 +16,6 @@ const getCompanies = (): Promise<ICompany[]> => {
 */
 function* fetchCompanySaga() {
     try {
-        console.log('request');
-
         const response: AxiosResponse<ICompany[]> = yield call(getCompanies);
         yield put(
             fetchCompanySuccess({

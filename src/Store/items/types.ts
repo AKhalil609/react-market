@@ -9,6 +9,7 @@ import {
     ADD_TAG_FILTER,
     REMOVE_BRAND_FILTER,
     REMOVE_TAG_FILTER,
+    SHOW_BASKET,
 } from './actionTypes';
 
 export interface IItem {
@@ -31,6 +32,7 @@ export interface ItemState {
     total: number
     brandFilter: string[]
     tagFilter: string[]
+    showBasket: boolean
 }
 
 export interface FetchItemsSuccessPayload {
@@ -67,6 +69,7 @@ export interface FetchItemsFailurePayload {
 export interface FetchItemsRequest {
     type: typeof FETCH_ITEM_REQUEST
 }
+
 
 export type FetchItemsSuccess = {
     type: typeof FETCH_ITEM_SUCCESS
@@ -113,6 +116,10 @@ export type RemoveFilterTag = {
     payload: FilterBrandPayload
 }
 
+export type ShowBasket = {
+    type: typeof SHOW_BASKET
+}
+
 export type ItemActions =
     | FetchItemsRequest
     | FetchItemsSuccess
@@ -124,3 +131,4 @@ export type ItemActions =
     | RemoveFilterBrand
     | AddFilterTag
     | RemoveFilterTag
+    | ShowBasket

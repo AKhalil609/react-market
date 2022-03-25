@@ -40,3 +40,7 @@ export const ColorPalette = {
     LightGray: '#F4F4F4',
     LableGray: '#A8A8A8',
 };
+
+export const BreakPoints = {
+    small: '900px'
+};
