@@ -47,7 +47,7 @@ export const ControlsContainer = styled.div`
 export const ControlBtn = styled.button`
     color: ${ColorPalette.LightBlue};
     display: contents;
-    :hover{
+    :hover {
         cursor: pointer;
     }
 `;
@@ -64,7 +64,7 @@ export const CounterContainer = styled.div`
 `;
 
 export const BasketTotal = styled.div`
-    border: 2px solid #1EA4CE;
+    border: 2px solid #1ea4ce;
     border-radius: 2px;
     height: fit-content;
     width: fit-content;
@@ -72,5 +72,5 @@ export const BasketTotal = styled.div`
     ${RegularSemiBold('16px')}
     margin-top: 16px;
     align-self: flex-end;
-    color: ${ColorPalette.LightBlue}
+    color: ${ColorPalette.LightBlue};
 `;

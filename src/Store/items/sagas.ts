@@ -6,16 +6,17 @@ import { FETCH_ITEM_REQUEST } from './actionTypes';
 import { IItem } from './types';
 
 const getItems = (): Promise<IItem[]> => {
-    return axios.get('https://my-json-server.typicode.com/AKhalil609/demo/items');
+    return axios.get(
+        'https://my-json-server.typicode.com/AKhalil609/demo/items'
+    );
 };
-    
 
 /*
   Worker Saga: Fired on FETCH_ITEM_REQUEST action
 */
 function* fetchItemSaga() {
     try {
-        const response:  AxiosResponse<IItem[]> = yield call(getItems);
+        const response: AxiosResponse<IItem[]> = yield call(getItems);
         yield put(
             fetchItemSuccess({
                 items: response.data,

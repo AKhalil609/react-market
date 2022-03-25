@@ -15,17 +15,15 @@ import {
 } from '../styles/Container.styled';
 
 interface Props {
-    title: string;
-    entries: any;
+    title: string
+    entries: any
 }
 
-
-const FilterCard: React.FC<Props> = ({title, entries}) => {
+const FilterCard: React.FC<Props> = ({ title, entries }) => {
     const pending = useSelector(getPendingSelector);
     const error = useSelector(getErrorSelector);
     const [searchTerm, setSearchTerm] = useState('');
     const [filteredEntries, setFilteredEntries] = useState([]);
-    const [checked, setChecked] = useState(false);
 
     useEffect(() => {
         setFilteredEntries(
@@ -39,7 +37,10 @@ const FilterCard: React.FC<Props> = ({title, entries}) => {
         <MiniCardContainer>
             <Subtitle>{title}</Subtitle>
             <MiniCard>
-                <SearchInput placeholder={`Search ${title}`} onChange={e=> setSearchTerm(e.target.value)}></SearchInput>
+                <SearchInput
+                    placeholder={`Search ${title}`}
+                    onChange={(e) => setSearchTerm(e.target.value)}
+                ></SearchInput>
                 <ListContainer>
                     {pending ? (
                         <div>Loading...</div>
@@ -48,7 +49,12 @@ const FilterCard: React.FC<Props> = ({title, entries}) => {
                     ) : (
                         filteredEntries.map((entry: any, index: any) => (
                             <CheckBoxContainer key={index}>
-                                <Checkbox name={title.toLowerCase()} value={entry[0]} label={entry[0]} /> ({entry[1]})
+                                <Checkbox
+                                    name={title.toLowerCase()}
+                                    value={entry[0]}
+                                    label={entry[0]}
+                                />{' '}
+                                ({entry[1]})
                             </CheckBoxContainer>
                         ))
                     )}

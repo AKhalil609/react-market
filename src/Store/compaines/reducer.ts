@@ -3,15 +3,15 @@ import {
     FETCH_COMPANY_SUCCESS,
     FETCH_COMPANY_FAILURE,
 } from './actionTypes';
-  
+
 import { CompanyActions, CompanyState } from './types';
-  
+
 const initialState: CompanyState = {
     pending: false,
     companies: [],
     error: null,
 };
-  
+
 export default (state = initialState, action: CompanyActions) => {
     switch (action.type) {
     case FETCH_COMPANY_REQUEST:

@@ -51,13 +51,13 @@ export interface SortPayload {
 }
 
 export interface FilterBrandPayload {
-  filterElement: string;
-  filterType: string;
+    filterElement: string
+    filterType: string
 }
 
 export interface FilterTagPayload {
-  filterElement: string;
-  filterType: string;
+    filterElement: string
+    filterType: string
 }
 
 export interface FetchItemsFailurePayload {
@@ -94,23 +94,23 @@ export type SortItems = {
 }
 
 export type AddFilterBrand = {
-  type: typeof ADD_BRAND_FILTER
-  payload: FilterBrandPayload
+    type: typeof ADD_BRAND_FILTER
+    payload: FilterBrandPayload
 }
 
 export type RemoveFilterBrand = {
-  type: typeof REMOVE_BRAND_FILTER
-  payload: FilterBrandPayload
+    type: typeof REMOVE_BRAND_FILTER
+    payload: FilterBrandPayload
 }
 
 export type AddFilterTag = {
-  type: typeof ADD_TAG_FILTER
-  payload: FilterTagPayload
+    type: typeof ADD_TAG_FILTER
+    payload: FilterTagPayload
 }
 
 export type RemoveFilterTag = {
-  type: typeof REMOVE_TAG_FILTER
-  payload: FilterBrandPayload
+    type: typeof REMOVE_TAG_FILTER
+    payload: FilterBrandPayload
 }
 
 export type ItemActions =

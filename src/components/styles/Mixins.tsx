@@ -38,5 +38,5 @@ export const ColorPalette = {
     NearlyBlack: '#191919',
     CoralBlack: '#525252',
     LightGray: '#F4F4F4',
-    LableGray: '#A8A8A8'
+    LableGray: '#A8A8A8',
 };

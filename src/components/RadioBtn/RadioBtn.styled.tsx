@@ -3,10 +3,10 @@ import { RegularNormal, ColorPalette } from '../styles/Mixins';
 import Tic from '../../assets/tic.svg';
 
 export const Input = styled.input`
-  height: 0;
-  width: 0;
-  opacity: 0;
-  z-index: -1;
+    height: 0;
+    width: 0;
+    opacity: 0;
+    z-index: -1;
 `;
 
 export const popIn = keyframes`
@@ -21,49 +21,49 @@ to {
 `;
 
 export const Label = styled.label`
-  position: relative;
-  display: inline-block;
-  cursor: pointer;
-  margin: 0.6em 3em;
-  ${RegularNormal()};
-  color: ${ColorPalette.CoralBlack};
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    margin: 0.6em 3em;
+    ${RegularNormal()};
+    color: ${ColorPalette.CoralBlack};
 `;
 
 export const Indicator = styled.div`
-  border: 1px solid ${ColorPalette.LightBlue};
-  border-radius: 1em;
-  width: 1.2em;
-  height: 1.2em;
-  position: absolute;
-  top: 0;
-  left: -30px;
-
-  ${Label}:hover & {
-    background: #ccc;
-  }
-
-  &::after {
-    content: "";
+    border: 1px solid ${ColorPalette.LightBlue};
+    border-radius: 1em;
+    width: 1.2em;
+    height: 1.2em;
     position: absolute;
-    display: none;
-  }
+    top: 0;
+    left: -30px;
 
-  ${Input}:checked + &::after {
-    display: block;
-    background-image: url(${Tic});
-    width: 0.5em;
-    height: 0.5em;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    animation-name: ${popIn};
-    animation-duration: 0.3s;
-    animation-fill-mode: forwards;
-  }
+    ${Label}:hover & {
+        background: #ccc;
+    }
 
-  ${Input}:disabled + & {
-    pointer-events: none;
-    opacity: 0.6;
-    background: #e6e6e6;
-  }
+    &::after {
+        content: '';
+        position: absolute;
+        display: none;
+    }
+
+    ${Input}:checked + &::after {
+        display: block;
+        background-image: url(${Tic});
+        width: 0.5em;
+        height: 0.5em;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        animation-name: ${popIn};
+        animation-duration: 0.3s;
+        animation-fill-mode: forwards;
+    }
+
+    ${Input}:disabled + & {
+        pointer-events: none;
+        opacity: 0.6;
+        background: #e6e6e6;
+    }
 `;

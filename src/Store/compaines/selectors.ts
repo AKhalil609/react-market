@@ -8,7 +8,10 @@ const getCompanies = (state: AppState) => state.company.companies;
 
 const getError = (state: AppState) => state.company.error;
 
-export const getCompaniesSelector = createSelector(getCompanies, (companies) => companies);
+export const getCompaniesSelector = createSelector(
+    getCompanies,
+    (companies) => companies
+);
 
 export const getPendingSelector = createSelector(
     getPending,

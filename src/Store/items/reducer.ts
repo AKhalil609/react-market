@@ -133,10 +133,10 @@ export default (state = initialState, action: ItemActions) => {
     case ADD_BRAND_FILTER:
         return {
             ...state,
-            brandFilter: action.payload.filterElement === 'All' ? [] : [
-                ...state.brandFilter,
-                action.payload.filterElement,
-            ],
+            brandFilter:
+                    action.payload.filterElement === 'All'
+                        ? []
+                        : [...state.brandFilter, action.payload.filterElement],
         };
     case REMOVE_BRAND_FILTER:
         return {
@@ -148,16 +148,16 @@ export default (state = initialState, action: ItemActions) => {
     case ADD_TAG_FILTER:
         return {
             ...state,
-            tagFilter: action.payload.filterElement === 'All' ? [] : [
-                ...state.tagFilter,
-                action.payload.filterElement,
-            ],
+            tagFilter:
+                    action.payload.filterElement === 'All'
+                        ? []
+                        : [...state.tagFilter, action.payload.filterElement],
         };
     case REMOVE_TAG_FILTER:
         return {
             ...state,
             tagFilter: [...state.tagFilter].filter(
-                (tag) => tag !== action.payload.filterElement  
+                (tag) => tag !== action.payload.filterElement
             ),
         };
     default:

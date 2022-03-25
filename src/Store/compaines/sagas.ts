@@ -6,9 +6,10 @@ import { FETCH_COMPANY_REQUEST } from './actionTypes';
 import { ICompany } from './types';
 
 const getCompanies = (): Promise<ICompany[]> => {
-    return axios.get('https://my-json-server.typicode.com/AKhalil609/demo/companies');
+    return axios.get(
+        'https://my-json-server.typicode.com/AKhalil609/demo/companies'
+    );
 };
-    
 
 /*
   Worker Saga: Fired on FETCH_COMPANY_REQUEST action
@@ -16,8 +17,8 @@ const getCompanies = (): Promise<ICompany[]> => {
 function* fetchCompanySaga() {
     try {
         console.log('request');
-        
-        const response:  AxiosResponse<ICompany[]> = yield call(getCompanies);
+
+        const response: AxiosResponse<ICompany[]> = yield call(getCompanies);
         yield put(
             fetchCompanySuccess({
                 companies: response.data,

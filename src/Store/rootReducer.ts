@@ -5,9 +5,9 @@ import companyReducer from './compaines/reducer';
 
 const rootReducer = combineReducers({
     item: itemReducer,
-    company: companyReducer
+    company: companyReducer,
 });
 
-export type AppState = ReturnType<typeof rootReducer>;
+export type AppState = ReturnType<typeof rootReducer>
 
 export default rootReducer;

@@ -14,25 +14,24 @@ interface Props {
     item: AddItemPayload
 }
 
-const ItemControls: React.FC<Props> = ({item}) =>
-{ 
+const ItemControls: React.FC<Props> = ({ item }) => {
     const dispatch = useDispatch();
-    const addItemToCart = () =>{
+    const addItemToCart = () => {
         const payload = {
-            id:item.id,
-            quantity:1,
-            name:item.name,
-            price:item.price,
+            id: item.id,
+            quantity: 1,
+            name: item.name,
+            price: item.price,
         };
         dispatch(addItem(payload));
     };
 
-    const removeItemFromCart = () =>{
+    const removeItemFromCart = () => {
         const payload = {
-            id:item.id,
-            quantity:1,
-            name:item.name,
-            price:item.price,
+            id: item.id,
+            quantity: 1,
+            name: item.name,
+            price: item.price,
         };
         dispatch(removeItem(payload));
     };
@@ -46,6 +45,7 @@ const ItemControls: React.FC<Props> = ({item}) =>
                 <Add />
             </ControlBtn>
         </ControlsContainer>
-    );};
+    );
+};
 
 export default ItemControls;

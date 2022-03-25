@@ -2,7 +2,7 @@ import styled, { keyframes } from 'styled-components';
 import { ColorPalette, RegularNormal } from '../styles/Mixins';
 
 interface Props {
-    checked?: boolean;
+    checked?: boolean
 }
 
 export const Input = styled.input`
@@ -42,8 +42,8 @@ export const rotate = keyframes`
 export const Indicator = styled.div<Props>`
     width: 22px;
     height: 22px;
-    background: ${props => {
-        return (props.checked ? ColorPalette.LightBlue : ColorPalette.PureWhite);
+    background: ${(props) => {
+        return props.checked ? ColorPalette.LightBlue : ColorPalette.PureWhite;
     }};
     position: absolute;
     top: 0em;
