@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { ReactEventHandler, useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import {
     getErrorSelector,
@@ -25,6 +25,7 @@ const FilterCard: React.FC<Props> = ({title, entries}) => {
     const error = useSelector(getErrorSelector);
     const [searchTerm, setSearchTerm] = useState('');
     const [filteredEntries, setFilteredEntries] = useState([]);
+    const [checked, setChecked] = useState(false);
 
     useEffect(() => {
         setFilteredEntries(
@@ -33,8 +34,6 @@ const FilterCard: React.FC<Props> = ({title, entries}) => {
             )
         );
     }, [searchTerm, entries]);
-
-    
 
     return (
         <MiniCardContainer>
@@ -49,7 +48,7 @@ const FilterCard: React.FC<Props> = ({title, entries}) => {
                     ) : (
                         filteredEntries.map((entry: any, index: any) => (
                             <CheckBoxContainer key={index}>
-                                <Checkbox label={entry[0]} /> ({entry[1]})
+                                <Checkbox name={title.toLowerCase()} value={entry[0]} label={entry[0]} /> ({entry[1]})
                             </CheckBoxContainer>
                         ))
                     )}

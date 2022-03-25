@@ -5,6 +5,10 @@ import {
     ADD_TO_CART,
     REMOVE_FROM_CART,
     SORT_ITEMS,
+    ADD_BRAND_FILTER,
+    ADD_TAG_FILTER,
+    REMOVE_BRAND_FILTER,
+    REMOVE_TAG_FILTER,
 } from './actionTypes';
 import {
     FetchItemsRequest,
@@ -17,6 +21,12 @@ import {
     RemoveItem,
     SortItems,
     SortPayload,
+    AddFilterBrand,
+    FilterBrandPayload,
+    FilterTagPayload,
+    AddFilterTag,
+    RemoveFilterBrand,
+    RemoveFilterTag,
 } from './types';
   
 export const fetchItemRequest = (): FetchItemsRequest => ({
@@ -55,5 +65,33 @@ export const sortItems = (
     payload: SortPayload
 ): SortItems => ({
     type: SORT_ITEMS,
+    payload
+});
+
+export const addBrandFilter = (
+    payload: FilterBrandPayload
+): AddFilterBrand => ({
+    type: ADD_BRAND_FILTER,
+    payload
+});
+
+export const removeBrandFilter = (
+    payload: FilterBrandPayload
+): RemoveFilterBrand => ({
+    type: REMOVE_BRAND_FILTER,
+    payload
+});
+
+export const addTagFilter = (
+    payload: FilterTagPayload
+): AddFilterTag => ({
+    type: ADD_TAG_FILTER,
+    payload
+});
+
+export const removeTagFilter = (
+    payload: FilterTagPayload
+): RemoveFilterTag => ({
+    type: REMOVE_TAG_FILTER,
     payload
 });

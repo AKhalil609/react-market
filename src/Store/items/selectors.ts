@@ -8,6 +8,10 @@ const getItems = (state: AppState) => state.item.items;
 
 const getCartItems = (state: AppState) => state.item.cart;
 
+const getBrandFilters = (state: AppState) => state.item.brandFilter;
+
+const getTagFilters = (state: AppState) => state.item.tagFilter;
+
 const getCartTotal = (state: AppState) => state.item.total;
 
 const getError = (state: AppState) => state.item.error;
@@ -39,6 +43,10 @@ export const getBrandsSelector = createSelector(getItems, (items) =>
         return allItems;
     }, {All:1})
 );
+
+export const getBrandFiltersSelector = createSelector(getBrandFilters, (brands) => brands);
+
+export const getBrandTagsSelector = createSelector(getTagFilters, (tags) => tags);
 
 export const getCartItemsSelector = createSelector(
     getCartItems,

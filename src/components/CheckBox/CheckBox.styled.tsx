@@ -42,7 +42,9 @@ export const rotate = keyframes`
 export const Indicator = styled.div<Props>`
     width: 22px;
     height: 22px;
-    background: ${props => (props.checked ? ColorPalette.LightBlue : ColorPalette.PureWhite)};
+    background: ${props => {
+        return (props.checked ? ColorPalette.LightBlue : ColorPalette.PureWhite);
+    }};
     position: absolute;
     top: 0em;
     left: -1.6em;
