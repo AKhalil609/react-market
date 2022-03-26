@@ -17,8 +17,6 @@ interface Props {
 const ItemControls: React.FC<Props> = ({ item }) => {
     const dispatch = useDispatch();
     const addItemToCart = () => {
-        console.log(item);
-        
         const payload = {
             id: item.id,
             quantity: 1,

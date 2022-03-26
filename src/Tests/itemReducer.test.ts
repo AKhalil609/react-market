@@ -17,16 +17,6 @@ describe('reducers', () => {
                 showBasket: false,
             };
         });
-        // const initialState: ItemState = {
-        //     pending: false,
-        //     items: [],
-        //     cart: [],
-        //     total: 0,
-        //     error: null,
-        //     brandFilter: [],
-        //     tagFilter: [],
-        //     showBasket: false,
-        // };
 
         const item = {
             _id: 'demo-item-id',
@@ -93,26 +83,6 @@ describe('reducers', () => {
             );
             expect(reduce).toEqual({ ...initialState, cart:[{...cartItem, quantity: 2}], total: 30 });
         });
-        // it('should handle ADD_TO_reducer action', () => {
-        //     expect(reducer(initialState, { type: 'ADD_TO_reducer', productId: 1 })).toEqual({
-        //         addedIds: [ 1 ],
-        //         quantityById: { 1: 1 }
-        //     });
-        // });
-
-        // describe('when product is already in reducer', () => {
-        //     it('should handle ADD_TO_reducer action', () => {
-        //         const state = {
-        //             addedIds: [ 1, 2 ],
-        //             quantityById: { 1: 1, 2: 1 }
-        //         };
-
-        //         expect(reducer(state, { type: 'ADD_TO_reducer', productId: 2 })).toEqual({
-        //             addedIds: [ 1, 2 ],
-        //             quantityById: { 1: 1, 2: 2 }
-        //         });
-        //     });
-        // });
     });
 
 });

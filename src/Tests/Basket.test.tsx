@@ -2,9 +2,9 @@ import React from 'react';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 import { render, fireEvent, screen, cleanup, waitFor } from '@testing-library/react';
-import Basket from '.';
-import ItemControls from './ItemControls';
-import reducer from '../../Store/items/reducer';
+import Basket from '../components/Basket';
+import ItemControls from '../components/Basket/ItemControls';
+import reducer from '../Store/items/reducer';
 import {mount} from 'enzyme';
 
 afterEach(cleanup);
@@ -83,19 +83,6 @@ describe('ItemControls Component', () => {
         });
         expect(wrapper.queryByTestId('ControlsContainer')).toBeTruthy();
     });
-    // it('should add quantity to item', () => {
-    //     const wrapper = renderWithRedux(<ItemControls item={item}/>, {
-    //         initialState: {
-    //             cart: [item],
-    //         },
-    //     });
-
-    //     fireEvent.click(wrapper.getByRole('AddBtn'));
-        
-    //     // console.log(wrapper.state());
-        
-    //     expect(wrapper.getByTestId('count')).toHaveTextContent('2');
-    // });
 });
 
 

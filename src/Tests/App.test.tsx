@@ -2,9 +2,10 @@ import React from 'react';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 import { render, fireEvent, screen, cleanup } from '@testing-library/react';
-import App from './App';
-import { ADD_BRAND_FILTER } from './Store/items/actionTypes';
-import { ItemActions, ItemState } from './Store/items/types';
+import App from '../App';
+import { ADD_BRAND_FILTER } from '../Store/items/actionTypes';
+import { ItemActions } from '../Store/items/types';
+
 
 afterEach(cleanup);
 

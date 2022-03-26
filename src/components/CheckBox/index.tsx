@@ -67,7 +67,7 @@ const Checkbox = ({ value, name, id, label }: CheckBoxProps) => {
     }, [brands, tags]);
 
     return (
-        <Label htmlFor={id}>
+        <Label data-testid='checkLabel' htmlFor={id}>
             <LabelContainer>{label}</LabelContainer>
             <Input
                 id={id}
@@ -77,7 +77,7 @@ const Checkbox = ({ value, name, id, label }: CheckBoxProps) => {
                 checked={check}
                 onChange={handelCheckbox}
             />
-            <Indicator checked={check} />
+            <Indicator data-testid='indicator' checked={check} />
         </Label>
     );
 };
